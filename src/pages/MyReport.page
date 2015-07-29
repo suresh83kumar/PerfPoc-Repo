@@ -1,0 +1,3 @@
+<apex:page >
+    <analytics:reportChart reportId="00O90000008Ntl8" showRefreshButton="true"></analytics:reportChart>
+</apex:page>

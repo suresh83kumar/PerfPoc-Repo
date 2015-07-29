@@ -1,0 +1,24 @@
+<apex:page sidebar="false" standardController="Position__c" recordSetVar="plist">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockSection title="List of Positions" columns="1" id="pb">
+    <apex:pageblockTable value="{!plist}" var="p" rows="5" id="pbt"> 
+        <apex:column >
+        <apex:commandLink reRender="pb1">{!p.name}
+        <apex:param name="pid" value="{!p.id}"/></apex:commandLink>
+        </apex:column>   
+        <apex:column value="{!p.Department__c}"/>
+        <apex:column value="{!p.Status__c}"/>
+        <apex:column value="{!p.Min_Pay__c}"/>
+        <apex:column value="{!p.Max_Pay__c}"/>
+    </apex:pageblockTable>
+    <apex:commandButton value="Next Page" action="{!Next}"/>
+    <apex:commandButton value="Previous Page" action="{!Previous}"/>
+    <apex:outputPanel id="pb1">
+       <apex:detail subject="{!$CurrentPage.parameters.pid}" relatedList="false" id="mydetail"/>
+    </apex:outputPanel>
+
+</apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

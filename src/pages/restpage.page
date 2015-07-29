@@ -1,0 +1,7 @@
+<apex:page sidebar="false" controller="RestController">
+<apex:form >
+	<apex:commandbutton value="Display" action="{!show}"/>
+	<br/>
+	<apex:inputtext size="50" value="{!msg}"/>
+</apex:form>
+</apex:page>

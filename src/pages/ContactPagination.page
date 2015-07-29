@@ -1,0 +1,25 @@
+<apex:page controller="sobjectpage">
+<apex:form >
+    <!--<apex:inputText title="Enter Object Name :" value="{!Objects}"/>-->
+    <apex:selectList value="{!country}" multiselect="false">
+        <apex:selectOption value="{!objects}"/>
+    </apex:selectList>
+    
+    <apex:commandButton value="Hello" action="{!test}" reRender="haha"/>
+<apex:pageBlock >
+<apex:pageBlockSection >
+    <apex:outputPanel id="haha">
+        
+        <!--<apex:pageblockTable value="{!Contacts}" var="c">
+            
+            <apex:column >
+                <apex:inputCheckbox value="{!Checked}"/>
+            </apex:column>
+            <apex:column value="{!c.Name}"/>
+            <apex:column value="{!c.Id}"/>
+        </apex:pageblockTable>-->
+    </apex:outputPanel>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

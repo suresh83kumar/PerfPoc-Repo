@@ -1,0 +1,9 @@
+<apex:page controller="ApexControllerHTML5" docType="html-5.0">
+    <apex:form >
+        Enter the Name:
+        <apex:inputText id="txtName" label="Name" value="{!Name}" required="true"/>
+        <apex:commandButton value="Validate" action="{!printName}"/>
+        <br/>
+        <apex:outputText rendered="{!NOT(ISBLANK(Name))}">You Entered: {!Name}</apex:outputText>   
+    </apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page controller="ActionPoller">
+    <apex:form >
+        <apex:outputPanel id="p1">
+            <apex:outputText style="font-size:50px;color:red" value="{!num1}"></apex:outputText>
+        </apex:outputPanel>
+        <apex:actionRegion id="aa">
+        <apex:actionPoller interval="5" action="{!mytest}" reRender="p1"/>
+       </apex:actionRegion>
+       
+       <apex:actionStatus for="aa">
+           <apex:facet name="start">Start Music...</apex:facet>
+           <apex:facet name="stop">Stop Music...</apex:facet>
+       </apex:actionStatus>
+    </apex:form>
+</apex:page>

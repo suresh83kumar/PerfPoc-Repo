@@ -1,0 +1,13 @@
+<apex:page controller="logincontroller">
+<apex:form >
+    <apex:outputlabel value="UserName">&nbsp;<apex:inputtext size="30" value="{!uname}"/>
+    </apex:outputlabel>
+    <apex:outputlabel value="Password">&nbsp;<apex:inputsecret size="30" value="{!pwd}"/>
+    </apex:outputlabel>
+    &nbsp;
+    <apex:commandbutton value="Login" action="{!loguser}"/>
+    <br/>
+    <apex:outputlabel value="{!logresponse}"/>
+    
+</apex:form>
+</apex:page>

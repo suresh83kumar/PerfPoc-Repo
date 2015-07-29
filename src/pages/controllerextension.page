@@ -1,0 +1,20 @@
+<apex:page standardController="Position__c" extensions="positionextension">
+ <apex:form >
+     <apex:pageblock >
+         <apex:pageblockSection title="Postion Details" columns="1">
+             <apex:inputField value="{!Position__c.name}"/>
+             <apex:inputField value="{!Position__c.Department__c}"/>
+             <apex:inputField value="{!Position__c.Status__c}"/>
+             <apex:inputField value="{!Position__c.Sub_Status__c}"/>
+             <apex:inputField value="{!Position__c.Min_Pay__c}"/>
+             <apex:inputField value="{!Position__c.Max_Pay__c}"/>
+         </apex:pageblockSection>
+         <apex:pageblockSection title="Financial Details" columns="1" id="pb">
+             <apex:commandButton value="Calc Gross Price" action="{!mypage}" reRender="pb"/>
+             <apex:inputtext size="30" Label="HRA" value="{!hra}"/>
+             <apex:inputtext size="30" Label="TA" value="{!ta}"/>
+             <apex:inputtext size="30" Label="GROSS" value="{!gross}"/>
+     </apex:pageblockSection>
+     </apex:pageblock>
+ </apex:form> 
+ </apex:page>

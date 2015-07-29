@@ -1,0 +1,26 @@
+<apex:page sidebar="false" controller="dynController">
+
+<apex:form >
+    <apex:panelGrid columns="2" border="5" width="100%" cellspacing="10">
+        <apex:outputPanel >
+        <apex:commandButton value="Display Objects" action="{!showObjects}"/>
+        <br/><br/>
+         <apex:dataList value="{!ObjList }" var="o"><apex:outputpanel styleClass="btn">{!o}</apex:outputpanel>
+        <!--<apex:commandLink value="{!o}" reRender="pan1" action="{!onClick1}"></apex:commandLink>  -->
+                    
+         </apex:dataList>  
+    </apex:outputPanel>          
+         <apex:outputPanel id="pan1">
+        <!-- <apex:dataList value="{!fldList}" var="f">{!f}</apex:dataList>
+             <apex:outputLabel value="Enter Object Name">
+             &nbsp; <apex:inputText size="30" value="{!objname}"/>
+                          </apex:outputLabel>
+                          &nbsp;
+        <apex:commandButton value="Display Fields" action="{!showFields}"/>  
+         <br/><br/>
+        <apex:dataList value="{!fldList}" var="f">{!f}</apex:dataList>         -->   
+         </apex:outputPanel>    
+    </apex:panelGrid>
+</apex:form>
+
+</apex:page>

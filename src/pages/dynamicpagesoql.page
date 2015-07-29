@@ -1,0 +1,18 @@
+<apex:page sidebar="false" controller="dynSOQLcontroller">
+
+<apex:form >
+    <apex:pageblock >   
+        <apex:pageblockSection title="SOQL" columns="1">        
+        <apex:inputtext size="30" label="Enter Object Name" value="{!objName}"/>
+        <apex:inputtext size="60" label="Select Fields..." value="{!fldName}"/>    
+        <apex:commandButton value="Display results" action="{!runQuery}"/>
+        <apex:commandButton value="Clean Position Records.." action="{!cleanPos}"/> 
+        <apex:outputText value="{!batchMsg}"></apex:outputText>
+        </apex:pageblockSection>
+    <apex:dataList value="{!rlist}" var="r">
+    {!r}    
+    </apex:dataList>
+    </apex:pageblock>
+</apex:form>
+
+</apex:page>

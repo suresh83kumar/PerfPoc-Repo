@@ -1,0 +1,5 @@
+<apex:page controller="dynamicQuestions">
+<apex:form id="myform">
+<apex:dynamicComponent componentValue="{!Radio}" id="magic"/>
+</apex:form>
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page controller="demosettergetter">
+<apex:form >
+    <apex:outputLabel style="font-size:40px;font-family:mistral;color:red" value="{!banner}">
+    </apex:outputLabel>
+    <br/>
+    <apex:dataTable border="5" cellspacing="5" cellpadding="5" value="{!plist}" var="p">
+        <apex:column headerValue="Position Title">{!p.name}
+        </apex:column>
+        <apex:column headerValue="Position Department">{!p.Department__c}
+        </apex:column>
+    </apex:dataTable>
+    <br/>
+    &nbsp;
+    <apex:outputLabel value="Enter Name">
+    &nbsp; <apex:inputText size="40" value="{!ename}"/>
+    </apex:outputLabel>    
+    &nbsp;
+    <apex:commandButton value="Display" action="{!disp}"/>
+    &nbsp;
+    {!err}
+</apex:form>
+</apex:page>

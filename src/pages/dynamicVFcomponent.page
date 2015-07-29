@@ -1,0 +1,8 @@
+<apex:page sidebar="false" controller="dynamicVFPage">
+   <apex:form >
+       <apex:commandButton value="Change Dynamic Components" action="{!test}"/> 
+       <br/>
+       <br/>
+       <apex:dynamicComponent componentValue="{!T1}"/>
+   </apex:form>
+</apex:page>

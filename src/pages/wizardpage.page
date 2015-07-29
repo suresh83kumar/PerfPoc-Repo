@@ -1,0 +1,17 @@
+<apex:page standardController="Candidate__c" extensions="wizardextension" sidebar="false">
+<apex:form >
+    <apex:pageMessages ></apex:pageMessages>
+
+    <apex:pageBlock >
+        <apex:pageblockSection title="Candidate Info" columns="1">
+            <apex:inputField value="{!Candidate__c.First_Name__c}"/>
+            <apex:inputField value="{!Candidate__c.Last_Name__c}"/>
+            <apex:inputField value="{!Candidate__c.Email__c}"/>
+        </apex:pageblockSection>
+        <apex:pageblockButtons location="Bottom" >
+            <apex:commandButton value="Next Page" action="{!showNext}"/>
+        </apex:pageblockButtons>
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

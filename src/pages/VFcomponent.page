@@ -1,0 +1,13 @@
+<apex:page controller="VFComponentController">
+<apex:form >
+    <apex:inputText size="40" value="{!ename}"/> &nbsp;
+    <apex:commandButton value="Display" action="{!disp}"/>
+    <br/><br/>
+    <c:BannerVFcomponent cColor="red" cData="{!ename}" cSize="50" cType="mistral">
+    </c:BannerVFcomponent>
+    <c:BannerVFcomponent cColor="blue" cData="{!ename}" cSize="50" cType="COURIER">
+    </c:BannerVFcomponent>
+    <c:BannerVFcomponent cColor="orange" cData="{!ename}" cSize="50" cType="FORTE">
+    </c:BannerVFcomponent>
+</apex:form>
+</apex:page>

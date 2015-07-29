@@ -1,0 +1,16 @@
+<apex:page >
+<apex:form >
+<center><apex:outputPanel style="font-size:50px;color:red">Welcome to {!$Organization.Name}</apex:outputPanel></center>
+<br/>
+<hr width="1600" height="50" color="Orange"/>
+<apex:outputLabel style="font-size:20px;color:blue" >User: {!$User.FirstName} {!$User.LastName}</apex:outputLabel>
+<br/>
+<br/>
+<apex:outputLink value="{!URLFOR($Action.Position__c.New)}">Click</apex:outputLink>
+<apex:outputLabel >for New Position</apex:outputLabel>
+<br/>
+<apex:outputLink value="{!URLFOR($Action.Candidate__c.New)}">Click</apex:outputLink>
+<apex:outputLabel >for New Candidate</apex:outputLabel>
+</apex:form>
+
+</apex:page>

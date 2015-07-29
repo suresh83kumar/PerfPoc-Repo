@@ -1,0 +1,27 @@
+<apex:page sidebar="false" standardController="Job_Application__c">
+<apex:form >
+    <apex:panelGrid columns="3" width="100" border="2">
+        <apex:outputPanel id="myposition">
+            <apex:detail subject="{!Job_Application__c.position__r.Id}" relatedList="false"/>
+        </apex:outputPanel>
+        <apex:outputPanel id="myJA">
+            <apex:pageblock >
+                <apex:pageBlockSection title="Job Application Edit" columns="2">
+                <apex:inputfield value="{!Job_Application__c.Name}"/>
+                <apex:inputfield value="{!Job_Application__c.Status__c}"/>
+                <apex:inputfield value="{!Job_Application__c.Stage__c}"/>
+                <apex:inputfield value="{!Job_Application__c.Position__c}"/>
+                <apex:inputfield value="{!Job_Application__c.Candidate__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageblock>
+        </apex:outputPanel>
+        <apex:outputPanel id="mycandidate">
+            <apex:detail subject="{!Job_Application__c.candidate__r.Id}" relatedList="false"/>
+        </apex:outputPanel>
+    </apex:panelGrid>
+</apex:form>
+</apex:page>

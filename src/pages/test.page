@@ -1,0 +1,37 @@
+<apex:page controller="sampleCon">
+    <apex:form >
+        
+        <apex:actionFunction action="{!fire}" name="hello" reRender="out, childset, mytest">
+            <apex:param name="myfirstparam" assignTo="{!country}" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction action="{!fire}" name="renderchild" reRender="childchildset, mytests">
+            <apex:param name="mysecondparam" assignTo="{!Childs}" value=""/>
+        </apex:actionFunction>
+        
+        <apex:actionFunction action="{!fire}" name="renderchildchild" reRender="mytestss">
+            <apex:param name="mythirdparam" assignTo="{!ccChilds}" value=""/>
+        </apex:actionFunction>        
+        
+        <apex:selectList id="object" styleclass="std" size="1"  value="{!country}" onChange="hello(this.value)">
+            <apex:selectOptions value="{!items}"/>
+        </apex:selectList>
+        
+        <apex:selectList id="childset" styleClass="std" size="1" value="{!Childs}" onchange="renderchild(this.value)">
+            <apex:selectOptions value="{!Childss}"/>
+        </apex:selectList>
+
+        <apex:selectList id="childchildset" styleClass="std" size="1" value="{!cChilds}" onchange="renderchildchild(this.value)">
+            <apex:selectOptions value="{!Childchild}"/>
+        </apex:selectList>
+        
+        <apex:commandButton value="Test" action="{!test}" rerender="out" status="status"/>
+        <p><apex:outputtext value="You have selected this object :{!country}" id="mytest"/></p>
+        <p><apex:outputtext value="You immediate child object :{!Childs}" id="mytests"/></p>
+        <p><apex:outputtext value="You grand child object :{!ccChilds}" id="mytestss"/></p>
+        
+        <c:mytestcomp bordercolor="red" id="mycomponent">
+        </c:mytestcomp>
+    
+  </apex:form> 
+</apex:page>

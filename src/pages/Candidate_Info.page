@@ -1,0 +1,27 @@
+<apex:page sidebar="false">
+<script src="/soap/ajax/18.0/connection.js"></script>
+<script src="/soap/ajax/18.0/apex.js"></script>
+<script>
+	function display(op,fname,lname,city)
+	{
+		var fname = document.getElementById(fname).value;
+		var lname = document.getElementById(lname).value;
+		var city = document.getElementById(city).value;
+		sforce.connection.init('{!$Api.session_id}','{!$Api.partner_server_url_140}');
+		var result = sforce.apex.execute('InsertCandidate','getcandidateinfo',{fname:fname,lname:lname,city:city});
+		document.getElementById(op).innerHTML=result;
+	}
+</script>
+	<apex:form >
+		<apex:outputlabel value="First Name"> &nbsp; <apex:inputtext size="40" id="fname"/>
+		</apex:outputlabel>
+		<apex:outputlabel value="Last Name"> &nbsp; <apex:inputtext size="40" id="lname"/>
+		</apex:outputlabel>
+		<apex:outputlabel value="City"> &nbsp; <apex:inputtext size="40" id="city"/>
+		</apex:outputlabel>
+		
+		<apex:outputpanel styleclass="btn" onclick="display('{!$Component.op}','{!$Component.fname}','{!$Component.lname}','{!$Component.city}')">Load</apex:outputpanel>
+		<br></br>
+		<apex:outputlabel style="font-size:50px;color:red" id="op"/>
+	</apex:form>
+</apex:page>

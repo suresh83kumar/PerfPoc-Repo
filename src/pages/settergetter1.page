@@ -1,0 +1,8 @@
+<apex:page controller="gettersetter1">
+<apex:form >
+<center><apex:outputText >
+</apex:outputText>
+<br/>
+<apex:commandButton value="Display"/></center>
+</apex:form>
+</apex:page>

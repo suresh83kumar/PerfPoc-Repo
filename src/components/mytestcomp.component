@@ -1,0 +1,51 @@
+<apex:component controller="MyobjectPage">
+   <apex:attribute name="bordercolor" type="String" description="TODO: Describe me"/>
+
+    <apex:panelGrid columns="4">
+        <apex:commandLink action="{!setCon.First}">First</apex:commandlink>
+        <apex:commandLink action="{!setCon.previous}">Previous</apex:commandlink>
+        <apex:commandLink action="{!setCon.next}">Next</apex:commandlink>
+        <apex:commandLink action="{!setCon.last}">Last</apex:commandlink>
+    </apex:panelGrid>
+    
+    <apex:outputPanel id="out">
+        <apex:actionstatus id="status" startText="testing...">
+            <apex:facet name="stop">
+                <apex:outputPanel id="internal">
+                    <p>You have selected : <b>{!country}</b></p>  
+                    <apex:pageBlock >
+                    <apex:pageBlockTable value="{!Wrapper}" var="o">
+                        <apex:column >
+                            <apex:inputCheckbox value="{!o.checked}" onclick="refresh">
+                            <apex:actionSupport event="onclick" action="{!refresh}" reRender="out1" status="he"/>
+                            </apex:inputCheckbox>
+                        </apex:column>
+                        <apex:column value="{!o.con.Id}"/>
+                        <apex:column value="{!o.con.Name}"/>
+                    </apex:pageBlockTable>
+                    </apex:pageBlock>              
+                </apex:outputPanel>
+            </apex:facet>
+        </apex:actionstatus>
+    </apex:outputPanel>
+    
+    <apex:actionStatus id="he" startText="refreshing...." stopText="done"/>
+    
+    <apex:commandButton value="Refresh Selected" action="{!customsave}" rerender="outer"/>
+    
+    
+    <apex:outputPanel id="outer">
+                    <apex:pageBlock >
+                    <apex:pageBlockTable value="{!mylist}" var="o">
+                        <apex:column >
+                            <apex:inputCheckbox value="{!o.checked}" disabled="true"/>
+                        </apex:column>
+                        <apex:column value="{!o.con.Id}"/>
+                        <apex:column value="{!o.con.Name}"/>
+                    </apex:pageBlockTable>
+                    </apex:pageBlock>              
+     </apex:outputPanel>
+    
+
+
+</apex:component>

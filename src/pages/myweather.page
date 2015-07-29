@@ -1,0 +1,26 @@
+<apex:page controller="myweather">
+  <h1>Find Your City Weather</h1>
+      <apex:form >
+          <apex:pageBlock Id="PB1">
+          <apex:pageBlockSection >
+              <apex:inputText id="field1" label="Enter City Name :" value="{!city}" />
+              <apex:inputText id="field2" label="Enter Country Name :" value="{!country}" />
+              <center><apex:commandButton action="{!saveRoles}" value="Submit" reRender="PB2"/></center>
+          </apex:pageBlockSection>
+          </apex:pageBlock>
+          
+          <apex:pageBlock id="PB2"><b>Weather Reports</b>
+              <apex:pageBlockSection >
+                  <apex:outputText ><b>Location : </b>{!Location}</apex:outputText>
+                  <apex:outputText ><b>Time : </b>{!Time1}</apex:outputText>
+                  <apex:outputText ><b>Wind : </b>{!Wind}</apex:outputText>
+                  <apex:outputText ><b>Visibility : </b>{!Visibility}</apex:outputText>
+                  <apex:outputText ><b>SkyConditions : </b>{!SkyConditions}</apex:outputText>
+                  <apex:outputText ><b>Temperature : </b>{!Temperature}</apex:outputText>
+                  <apex:outputText ><b>DewPoint : </b>{!DewPoint}</apex:outputText>
+                  <apex:outputText ><b>RelativeHumidity : </b>{!RelativeHumidity}</apex:outputText>
+                  <apex:outputText ><b>Pressure : </b>{!Pressure}</apex:outputText>
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+      </apex:form>
+</apex:page>

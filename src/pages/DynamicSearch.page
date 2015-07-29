@@ -1,0 +1,5 @@
+<apex:page tabStyle="Opportunity">
+ <apex:sectionHeader title="Opty123" subtitle="Home"/>
+ <c:DynamicSearchComponent objectName="Opportunity"/>
+ <apex:listViews type="Opportunity"/>
+</apex:page>

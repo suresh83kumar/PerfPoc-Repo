@@ -1,0 +1,12 @@
+<apex:page sidebar="false" controller="EmailController">
+<apex:form >
+	<apex:pageblock >
+		<apex:pageblocksection columns="1" title="UC Email">
+			<apex:inputtext size="50" label="To Address" Value="{!toaddr}"/>
+			<apex:inputtextarea rows="10" cols="50" label="Body" value="{!ebody}"/>
+			<apex:commandbutton value="Send Email" action="{!testemail}"/>
+			<apex:outputtext style="font-size:30px;" value="{!emsg}"/>
+		</apex:pageblocksection>
+	</apex:pageblock>
+</apex:form>
+</apex:page>

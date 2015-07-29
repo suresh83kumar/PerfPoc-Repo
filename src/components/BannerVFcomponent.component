@@ -1,0 +1,15 @@
+<apex:component controller="VFComponentController">
+    
+<apex:attribute name="cColor" description="Font Color" type="String"/>
+<apex:attribute name="cSize" description="Font Size" type="String"/>
+<apex:attribute name="cType" description="Font Style" type="String"/>
+<apex:attribute name="cData" description="Custom Data" type="String" assignTo="{!ename}"/>
+<!-- Use Span or Output Text as well -->
+<span style="font-size:{!cSize}px;color:{!cColor};font-family:{!cType}">
+    {!cData}
+</span>
+<apex:outputText style="font-size:{!cSize}px;color:{!cColor};font-family:{!cType}">
+    {!cData}
+</apex:outputText>
+
+</apex:component>
